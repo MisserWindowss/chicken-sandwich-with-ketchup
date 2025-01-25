@@ -25,10 +25,6 @@
             border-radius: 8px;
             border: 2px solid #ccc;
         }
-        #image-preview img {
-            max-width: 100%;
-            margin-top: 10px;
-        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -41,29 +37,19 @@
         .back-link:hover {
             background-color: #555;
         }
+        img {
+            margin: 10px 0;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <header>Görseller</header>
     <div class="container">
-        <h2>Görsel Ekle</h2>
-        <input type="file" id="image-input" accept="image/*">
-        <div id="image-preview"></div>
+        <h2>Görsellerim</h2>
+        <img src="IMG_20250109_170548_738.jpg" alt="agamin instada buldugu mistik adam">
         <a href="index.html" class="back-link">Geri Dön</a>
     </div>
-    <script>
-        const imageInput = document.getElementById('image-input');
-        const imagePreview = document.getElementById('image-preview');
-
-        imageInput.addEventListener('change', function(event) {
-            const files = event.target.files;
-            imagePreview.innerHTML = '';
-            for (let i = 0; i < files.length; i++) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(files[i]);
-                imagePreview.appendChild(img);
-            }
-        });
-    </script>
 </body>
 </html>
